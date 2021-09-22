@@ -138,8 +138,8 @@ function fizzBuzz(numero) {
   
   if (numero % 3 === 0) {
     return "fizz"
-  } else if (numero % 5 === 0) 
-  { return "buzz"
+  } else if (numero % 5 === 0) { 
+    return "buzz"
   }
   else {
 return numero}
@@ -173,10 +173,35 @@ function esPrimo(numero) {
   // Pista 2: Puedes resolverlo usando un bucle `for`
   // Nota: Los números 0 y 1 NO son considerados números primos
  
-  if (numero == 0 || numero ==1 || numero == 4) return false
-  for (let i = 2 ; i < numero/2 ; i++) {
-  if (numero % i == 0) return false
-  } return true
+  if (numero == 0 || numero == 1) {
+    return false}
+
+  if (numero == 5){
+    return false
+  }
+
+  let esPrimo = false //bandera
+
+  for (let y = 2 ; y < numero/2 ; y++) {// inicia en 2 porque 0 y 1 no son primos | controlar por la mitad de un numero
+    if (numero % y == 0) {// controlar el resto para saber si ess primo
+      esPrimo = false
+    } else { //si no se pudo dividir por ninguno de los de arriba si es primo
+      esPrimo = true
+    }
+  } 
+return esPrimo
+//ejempplo:
+// con el 7
+// x = 2; 2 < (7/2 = 3); x++
+// x = 2; 2 < 3; x++
+// 7 % 2 === 0 False
+// x = 3; 3 < 3 False (fin de for)
+
+// con el 5
+// es primo = false
+// x = 2; 2 < (2= 5/2); x++ 
+// x = 2; 2 < 2 ; (fin de for)
+
 }
 
 function esVerdadero(valor){
